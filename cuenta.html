@@ -11,14 +11,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-    <body class="bg-gray-100 flex items-center justify-center min-h-screen bg-[url('img/FondoCollageBB.png')] bg-[length:120%_50%]">
+    <body class="bg-white flex items-center justify-center min-h-screen">
+      <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
+        <source src="video/videoFondo.mp4" type="video/mp4">
+        
+    </video>
 <!-- Contenedor principal -->
-        <div class="bg-fuchsia-600 p-6 rounded-lg shadow-lg w-[700px] flex flex-col items-center">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-[700px] flex flex-col items-center">
             <h2 class="text-5xl font-bold mb-4 text-center" style="font-family: 'Bebas Neue', sans-serif;">Personaliza tu cuenta</h2>
             
             <div class="relative">
               <input type="file" id="fileInput" class="hidden">
               <label for="fileInput" class="bg-amber-600 p-4 rounded-full shadow-lg w-24 h-24 flex items-center justify-center cursor-pointer">
+                <img src="ruta/a/tu-imagen.png" alt="Subir" class="w-12 h-12 object-contain" />
+              </label>
+              
+              <input type="file" id="fileInput" class="hidden" />
+              
                 <!-- Imagen de perfil (opcional, si el usuario aún no ha subido una) -->
                 <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path fill-rule="evenodd" d="M12 2.25a9.75 9.75 0 1 0 0 19.5 9.75 9.75 0 0 0 0-19.5ZM1.5 12a10.5 10.5 0 1 1 21 0 10.5 10.5 0 0 1-21 0Zm10.5 6.375a6.375 6.375 0 1 0 0-12.75 6.375 6.375 0 0 0 0 12.75Zm0-1.5a4.875 4.875 0 1 1 0-9.75 4.875 4.875 0 0 1 0 9.75Z" clip-rule="evenodd" />
