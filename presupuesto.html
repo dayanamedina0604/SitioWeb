@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto</title>
+    
+    <link rel="icon" href="img/Logo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+  
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen bg-[url('img/FondoRegistro.png')] bg-cover bg-center">
+
+  <div class="bg-gray-200 p-6 rounded-lg shadow-2xl w-[700px] animate-fade-in backdrop-blur-md">
+    <h3 class="text-4xl font-bold mb-4 text-center" style="font-family: 'Bebas Neue', sans-serif;">Presupuesto del 01 de mayo al 15 de mayo</h3>
+
+    <table class="min-w-full table-auto border-collapse mb-6">
+      <thead>
+        <tr>
+          <th colspan="4" class="border px-4 py-2 text-center text-2xl font-semibold">Primera quincena de mayo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border px-4 py-2 text-xl font-semibold">Categoria</td>
+          <td class="border px-4 py-2 text-xl font-semibold">Ingresos</td>
+          <td class="border px-4 py-2 text-xl font-semibold">Gastos</td>
+          <td class="border px-4 py-2 text-xl font-semibold">Balance</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Casa</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Comida</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Trabajo</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+        </tr>
+        <tr>
+          <td class="border px-4 py-2">Otros</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+          <td class="border px-4 py-2">0$</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="flex flex-wrap justify-between gap-4 mb-6 items-center">
+        <div class="flex flex-col w-1/5">
+            <label for="menu1" class="text-sm font-bold" style="font-family: 'Bebas Neue', sans-serif;">Fecha</label>
+            <select id="menu1" name="menu1" class="px-4 py-2 border rounded-md w-full">
+            <option value="opcion1">del 01 al 15 de mayo</option>
+            <option value="opcion2">del 15 al 31 de mayo</option>
+            </select>
+        </div>
+
+        <div class="flex flex-col w-1/5">
+            <label for="menu2" class="text-sm font-bold" style="font-family: 'Bebas Neue', sans-serif;">Categoria</label>
+            <select id="menu2" name="menu2" class="px-4 py-2 border rounded-md w-full">
+            <option value="opcion1">Casa</option>
+            <option value="opcion2">Comida</option>
+            <option value="opcion3">Trabajo</option>
+            <option value="opcion4">Otros</option>
+            </select>
+        </div>
+
+        <div class="flex flex-col w-1/5">
+            <label for="menu3" class="text-sm font-bold" style="font-family: 'Bebas Neue', sans-serif;">Tipo</label>
+            <select id="menu3" name="menu3" class="px-4 py-2 border rounded-md w-full">
+            <option value="opcion1">Ingreso</option>
+            <option value="opcion2">Gasto</option>
+            </select>
+        </div>
+
+        <div class="flex flex-col w-1/5">
+            <label for="monto" class="text-sm font-bold" style="font-family: 'Bebas Neue', sans-serif;">Monto</label>
+            <input type="text" id="monto" name="monto" class="px-4 py-2 border rounded-md w-full" placeholder="Escribe">
+        </div>
+    </div>    
+
+    <div class="mt-6 flex justify-between items-center gap-x-6">
+        <button class="px-6 py-2 bg-fuchsia-700 text-lg font-semibold rounded-md hover:bg-yellow-600 text-gray-900" style="font-family: 'Bebas Neue', sans-serif;">Registrar movimiento</button>
+
+        <div class="flex items-center gap-x-4">
+            <a href="index.html" class="text-lg font-semibold text-gray-900" style="font-family: 'Bebas Neue', sans-serif;">Cancelar</a>
+            <a href="index.html" class="rounded-md bg-fuchsia-700 px-3 py-2 text-lg font-semibold text-black shadow-xs hover:bg-yellow-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" style="font-family: 'Bebas Neue', sans-serif;">Guardar</a>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
