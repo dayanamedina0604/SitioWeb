@@ -14,48 +14,60 @@
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen bg-[url('img/FondoRegistro.png')] bg-cover bg-center">
 
-  <div class="bg-gray-200 p-6 rounded-lg shadow-2xl w-[700px] animate-fade-in backdrop-blur-md">
+  <div class="bg-gray-200 p-6 rounded-lg shadow-2xl w-[900px] animate-fade-in backdrop-blur-md">
     <h3 class="text-4xl font-bold mb-4 text-center" style="font-family: 'Bebas Neue', sans-serif;">Presupuesto del 01 de mayo al 15 de mayo</h3>
 
-    <table class="min-w-full table-auto border-collapse mb-6">
-      <thead>
-        <tr>
-          <th colspan="4" class="border px-4 py-2 text-center text-2xl font-semibold">Primera quincena de mayo</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="border px-4 py-2 text-xl font-semibold">Categoria</td>
-          <td class="border px-4 py-2 text-xl font-semibold">Ingresos</td>
-          <td class="border px-4 py-2 text-xl font-semibold">Gastos</td>
-          <td class="border px-4 py-2 text-xl font-semibold">Balance</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Casa</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Comida</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Trabajo</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-        </tr>
-        <tr>
-          <td class="border px-4 py-2">Otros</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-          <td class="border px-4 py-2">0$</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="flex justify-center">
+      <table class="w-full border-collapse mx-auto">
+        <thead>
+          <tr>
+            <th colspan="6" class="border px-4 pr-[100px] text-center text-2xl font-semibold">Presupuestado - Real</th>
+          </tr>
+        </thead>
+        <tbody id="tablaPresupuesto">
+          <tr>
+            <td class="border px-4 py-2 text-xl font-semibold">Categoria</td>
+            <td class="border px-4 py-2 text-xl font-semibold">Ingresos</td>
+            <td class="border px-4 py-2 text-xl font-semibold">Gastos</td>
+            <td class="border px-4 py-2 text-xl font-semibold">Ingresos</td>
+            <td class="border px-4 py-2 text-xl font-semibold">Gastos</td>
+            <td class="border px-4 py-2 text-xl font-semibold">Balance</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Casa</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Comida</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Trabajo</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+          </tr>
+          <tr>
+            <td class="border px-4 py-2">Otros</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+            <td class="border px-4 py-2">0$</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="flex flex-wrap justify-between gap-4 mb-6 items-center">
         <div class="flex flex-col w-1/5">
@@ -90,13 +102,9 @@
         </div>
     </div>    
 
-    <div class="mt-6 flex justify-between items-center gap-x-6">
+    <div class="flex items-center gap-x-4 justify-end">
+        <a href="index.html" class="text-lg font-semibold text-gray-900" style="font-family: 'Bebas Neue', sans-serif;">Cancelar</a>
         <button class="px-6 py-2 bg-fuchsia-700 text-lg font-semibold rounded-md hover:bg-yellow-600 text-gray-900" style="font-family: 'Bebas Neue', sans-serif;">Registrar movimiento</button>
-
-        <div class="flex items-center gap-x-4">
-            <a href="index.html" class="text-lg font-semibold text-gray-900" style="font-family: 'Bebas Neue', sans-serif;">Cancelar</a>
-            <a href="index.html" class="rounded-md bg-fuchsia-700 px-3 py-2 text-lg font-semibold text-black shadow-xs hover:bg-yellow-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" style="font-family: 'Bebas Neue', sans-serif;">Guardar</a>
-        </div>
     </div>
 
   </div>
