@@ -109,7 +109,7 @@
     </div>
   
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="#" method="POST">
+      <form class="space-y-6" id="loginForm">
         <div>
           <label for="email" class="block text-sm/6 font-medium text-gray-900">Correo</label>
           <div class="mt-2">
@@ -139,10 +139,18 @@
   
         <div>
           <button type="submit" class="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm/6 
-            font-semibold text-white shadow-xs hover:bg-fuchsia-800 focus-visible:outline-2
-            focus-visible:outline-offset-2 focus-visible:outline-black">Ingresar</button>
+      font-semibold text-white shadow-xs hover:bg-fuchsia-800 focus-visible:outline-2
+      focus-visible:outline-offset-2 focus-visible:outline-black">Ingresar</button>
         </div>
       </form>
+      <!--Simular validacion ya que no tenemos la base de datos conectada-->
+      <script>
+  document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // evita el POST
+    window.location.href = "principal.html"; // redirección manual
+  });
+</script>
+<!--din de la simulacion de validacion-->
   
       <p class="mt-10 text-center text-sm/6 text-gray-500">
         ¿No tienes una cuenta?
