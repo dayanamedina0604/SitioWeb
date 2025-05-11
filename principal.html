@@ -3,25 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Finanzas</title>
+  <link rel="icon" href="img/Logo.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/output.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <title>Principal</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 p-4 font-sans">
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
+        <source src="video/videoFondo.mp4" type="video/mp4">
+        
+    </video>
 
   <!-- Sesión -->
-  <div class="text-sm text-gray-600 mb-4">
-    <p>Sesión iniciada: <strong>dannis1602@*****.com</strong></p>
-  </div>
+  <div class="w-fit text-sm text-gray-600 mb-4 bg-white shadow-md rounded-xl px-3 py-1" style="font-family: 'Bebas Neue', sans-serif;">
+  <p>Sesión iniciada: <strong>dannis1602@*****.com</strong></p>
+</div>
+
 
   <!-- Bienvenida -->
-  <div class="bg-white p-4 rounded-xl shadow-md mb-4 text-center">
-    <h2 class="text-2xl font-bold mb-2">¡Bienvenida, Danna!</h2>
-    
-    <!-- Emojis salud financiera -->
-    <div class="flex justify-center gap-2 text-2xl mb-1">
-      <span>😡</span><span>😟</span><span>😐</span><span>🙂</span><span>😄</span>
-    </div>
-    <p class="text-sm text-gray-700">Tu salud financiera es estable.</p>
+  <div class="bg-ambar-300 p-4 rounded-xl shadow-md mb-4 text-center bg-gray-100">
+    <h2 class="text-2xl font-bold mb-2" style="font-family: 'Bebas Neue', sans-serif;">¡Bienvenida, Danna!</h2>
+    <p class="text-sm text-gray-700" style="font-family: 'Bebas Neue', sans-serif;">Tu salud financiera es estable.</p>
     <!--barrita de progreso-->
     <div class="w-full max-w-lg mx-auto mt-10">
   <!-- Contenedor de la barra -->
@@ -33,12 +39,18 @@
 
     <!-- Indicador dinámico -->
     <div id="indicator" class="absolute -top-10 transition-all duration-700 ease-in-out">
-      <div id="label" class="text-xs font-bold px-2 py-1 rounded-full text-white bg-black shadow">
+      <div id="label" class="text-xs font-bold px-2 py-1 rounded-full text-white bg-black shadow" style="font-family: 'Bebas Neue', sans-serif;">
         Puntaje
       </div>
+      
       <div class="w-3 h-3 bg-black rotate-45 mx-auto -mt-1"></div>
     </div>
   </div>
+  <!-- Emojis salud financiera -->
+    <div class="flex justify-center gap-24 text-2xl mb-1">
+      <span>😡</span><span>😟</span><span>🙂</span><span>😄</span>
+    </div>
+  
 </div>
 <script>
   // Valor del puntaje entre 0 y 100
@@ -80,40 +92,66 @@
 </script>
 
 <!--fin barrita de progreso-->
-    <div class="text-xs text-green-600 mt-1">Pronto estará aquí, sigue así.</div>
+
+    <div class="text-xs text-green-600 ml-[400px]" style="font-family: 'Bebas Neue', sans-serif;">Pronto estará aquí, ¡Ánimo!</div>
   </div>
 
   <!-- Totales -->
-  <div class="bg-yellow-200 p-4 rounded-xl shadow-md mb-4">
-    <div class="flex justify-between items-center mb-2">
-      <span>+ Efectivo</span>
-      <div class="flex gap-2 items-center">
-        <button class="text-red-500">🗑</button>
-        <span class="font-semibold">$260.000</span>
-      </div>
-    </div>
-    <div class="flex justify-between items-center mb-2">
-      <span>+ Tarjetas</span>
-      <div class="flex gap-2 items-center">
-        <button class="text-red-500">🗑</button>
-        <span class="font-semibold">$1.169.500</span>
-      </div>
-    </div>
-    <div class="flex justify-between items-center">
-      <span>+ Apps</span>
-      <div class="flex gap-2 items-center">
-        <button class="text-red-500">🗑</button>
-        <span class="font-semibold">$69.000</span>
-      </div>
+<!-- Contenedor general -->
+<div class="flex flex-wrap justify-between gap-4 p-4 rounded-xl shadow-md mb-4">
+
+  <!-- DIV IZQUIERDO -->
+ <div class="w-full md:w-[48%] bg-gray-200  p-6 rounded-2xl shadow-lg text-gray-800" style="font-family: 'Bebas Neue', sans-serif;">
+  <h2 class="text-2xl font-bold mb-4 text-yellow-700 flex items-center gap-2">💰 Totales</h2>
+
+  <div class="bg-white rounded-xl p-3 shadow-inner mb-3 flex justify-between items-center">
+    <span class="text-lg">💸 Efectivo</span>
+    <div class="flex items-center gap-2">
+      <button class="text-fuchsia-600 hover:text-yellow-600 transition">🖉</button>
+      <span class="font-bold text-base text-black">$260.000</span>
     </div>
   </div>
 
-  <!-- Próximo pago -->
-  <div class="bg-white p-4 rounded-xl shadow-md mb-4">
-    <h3 class="font-bold text-lg">Próximo pago</h3>
-    <p class="text-sm">Estado del pago:<br><strong>Crédito casa → 31/10/2024</strong></p>
-    <p class="text-red-600 mt-2 font-semibold">🔴 >> Urgente.</p>
+  <div class="bg-white rounded-xl p-3 shadow-inner mb-3 flex justify-between items-center">
+    <span class="text-lg">💳 Tarjetas</span>
+    <div class="flex items-center gap-2">
+      <button class="text-fuchsia-600 hover:text-yellow-600 transition">🖉</button>
+      <span class="font-bold text-base text-black">$1.169.500</span>
+    </div>
   </div>
+
+  <div class="bg-white rounded-xl p-3 shadow-inner flex justify-between items-center">
+    <span class="text-lg">📱 Apps</span>
+    <div class="flex items-center gap-2">
+      <button class="text-fuchsia-600 hover:text-yellow-600 transition">🖉</button>
+      <span class="font-bold text-base text-black">$69.000</span>
+    </div>
+  </div>
+</div>
+
+
+  <!-- DIV DERECHO -->
+  <div class="w-full md:w-[48%] bg-gray-200 p-6 rounded-2xl shadow-lg text-gray-800" style="font-family: 'Bebas Neue', sans-serif;">
+  <h2 class="text-2xl font-bold mb-3 text-fuchsia-700 flex items-center gap-2">
+    📅 Próximo pago
+  </h2>
+  
+  <div class="bg-white p-4 rounded-xl shadow-inner mb-2">
+    <p class="text-lg">🏠 Crédito casa</p>
+    <p class="text-sm text-gray-500">Fecha límite: <span class="font-semibold text-black">31/10/2024</span></p>
+  </div>
+  
+  <div class="flex items-center gap-2 mt-2">
+    <span class="bg-red-500 text-white text-xs px-3 py-1 rounded-full animate-pulse">URGENTE</span>
+    <span class="text-red-600 font-bold text-sm">¡Realiza el pago cuanto antes!</span>
+  </div>
+</div>
+
+</div>
+    </div>
+  </div>
+
+  
 
   <!-- Botones acciones -->
   <div class="flex flex-wrap justify-center gap-4">
