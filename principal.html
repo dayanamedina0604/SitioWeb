@@ -155,10 +155,26 @@
 
   <!-- Botones acciones -->
   <div class="flex flex-wrap justify-center gap-4">
-    <button class="bg-purple-700 text-white py-2 px-4 rounded-full shadow">Nuevo Ingreso</button>
-    <button class="bg-purple-800 text-white py-2 px-4 rounded-full shadow">Nuevo gasto</button>
+    <a href="registroIngresos.html" class="bg-purple-700 text-white py-2 px-4 rounded-full shadow inline-block text-center">
+    Nuevo Ingreso</a>
+ <button class="bg-purple-800 text-white py-2 px-4 rounded-full shadow">Nuevo gasto</button>
     <button class="bg-purple-900 text-white py-2 px-4 rounded-full shadow">Reportes</button>
-    <button class="bg-purple-600 text-white py-2 px-4 rounded-full shadow">Más</button>
+    <div class="relative inline-block text-left">
+  <!-- Botón principal -->
+  <button onclick="document.getElementById('menuOpciones').classList.toggle('hidden')"
+          class="bg-purple-600 text-white py-2 px-4 rounded-full shadow">
+    Más
+  </button>
+
+  <!-- Menú desplegable oculto por defecto -->
+  <div id="menuOpciones" class="absolute mt-2 right-0 bottom-full bg-white rounded-md shadow-lg w-40 hidden z-20 
+       md:w-48 lg:w-56">
+    <a href="registroCredito.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-100">Registrar crédito</a>
+    <a href="pagina2.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-100">Opción 2</a>
+    <a href="pagina3.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-100">Opción 3</a>
+  </div>
+</div>
+
   </div>
 
 </body>
