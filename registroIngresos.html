@@ -11,13 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <title>Registro de Ingresos</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Bebas Neue', sans-serif;
     }
 
-    .formulario-ingresos {
+    .formulario-ingresos, .formulario-dp {
       display: block;
     }
 
@@ -44,138 +43,66 @@
         <option>Otro</option>
       </select>
       <input id="otroIngreso" type="text" placeholder="Si eligió otro tipo de crédito, escríbelo..." class="w-full mb-4 p-2 border border-gray-300 rounded-md hidden" />
-      <script>
-        // Obtener los elementos
-        const select = document.getElementById('tipoIngreso');
-        const inputOtroCredito = document.getElementById('otroIngreso');
 
-        // Agregar evento de cambio al select
-        select.addEventListener('change', function() {
-          // Verificar si la opción seleccionada es "Otro"
-          if (select.value === "Otro") {
-            inputOtroCredito.classList.remove('hidden');  // Mostrar el campo de texto
-          } else {
-            inputOtroCredito.classList.add('hidden');  // Ocultar el campo de texto
-          }
-        });
-      </script>
+      <!-- Monto del ingreso -->
+      <label for="montoIngreso" class="block text-sm font-semibold mb-1 mt-4">Monto del ingreso</label>
+      <input type="number" id="montoIngreso" placeholder="Ingresa el monto" class="w-full mb-4 p-2 border border-gray-300 rounded-md" min="0" step="0.01" required />
+    </div>
 
-      <!-- Nombre del crédito -->
-      <label class="block text-sm font-semibold mb-1">Nombra tu ingreso</label>
-      <input type="text" placeholder=">" class="w-full mb-4 p-2 border border-gray-300 rounded-md" />
+    <div id="detallepresupuesto" class="formulario-dp">
+      <!-- Detalle de presupuesto -->
+      <label class="block text-sm font-semibold mb-1">Detalle de tu presupuesto </label>
+      <select id="detallep" class="w-full mb-2 p-2 border border-gray-300 rounded-md">
+        <option>Efectivo</option>
+        <option>Transacción</option>
+        <option>Otro</option>
+      </select>
+      <input id="OtroDetalle" type="text" placeholder="Si eligió otro detalle de presupuesto, escríbelo..." class="w-full mb-4 p-2 border border-gray-300 rounded-md hidden" />
+    </div>
 
-      <!-- Fechas -->
-      <div class="flex gap-2 mb-4">
-        <div class="w-1/2">
-          <label class="block text-sm font-semibold mb-1">Inicio crédito</label>
-          <input type="date" class="w-full p-2 border border-gray-300 rounded-md" />
-        </div>
-        <div class="w-1/2">
-          <label class="block text-sm font-semibold mb-1">Final crédito</label>
-          <input type="date" class="w-full p-2 border border-gray-300 rounded-md" />
-        </div> 
-        <div class="w-1/2">
-          <label class="block text-sm font-semibold mb-1">Fecha única de pago</label>
-          <input type="date" class="w-full p-2 border border-gray-300 rounded-md" />
-        </div>
-      </div>
-
-      <!-- Botones -->
-      <div class="flex justify-between gap-4">
-        <a href="principal.html" class="bg-black text-white text-center py-2 rounded-full w-full hover:bg-yellow-600 transition">
-          Registrar
-        </a>
-        <button id="btnRegistrarRecordatorio" type="button" class="bg-fuchsia-800 text-white py-2 rounded-full w-full hover:bg-yellow-600 transition" onclick="mostrarFormularioRecordatorio()">
-          Registrar y Crear Recordatorio
-        </button>
-      </div>
+    <!-- Botones -->
+    <div class="flex justify-between gap-4">
+      <a href="principal.html" class="bg-black text-white text-center py-2 rounded-full w-full hover:bg-yellow-600 transition">
+        Registrar
+      </a>
+      <button id="btnRegistrarRecordatorio" type="button" class="bg-fuchsia-800 text-white py-2 rounded-full w-full hover:bg-yellow-600 transition" onclick="mostrarFormularioRecordatorio()">
+        Registrar y Crear Recordatorio
+      </button>
     </div>
 
     <!-- Formulario que se despliega con las opciones de recordatorio -->
     <div id="formularioRecordatorio" class="formulario-recordatorio mt-6">
-      <fieldset class="mt-10">
-        <legend class="font-bold font-bebas text-lg mb-2 text-gray-800">Elige el tipo de notificación</legend>
-
-        <div class="flex flex-col md:flex-row gap-4">
-          <!-- Básico -->
-          <label class="group relative flex-1 cursor-pointer">
-            <input type="radio" name="notificaciones" value="basico" class="peer hidden">
-            <div class="border-2 rounded-xl p-4 text-center transition-all duration-300 bg-white border-green-300 peer-checked:bg-green-50 peer-checked:shadow-lg peer-checked:border-green-500 hover:scale-[1.02] hover:shadow-md">
-              <div class="text-lg font-bebas text-green-600 flex justify-center items-center gap-2">
-                Básico
-              </div>
-              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-xs px-3 py-2 text-xs text-white bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
-                Recibirás una notificación al inicio de cada mes.
-              </div>
-            </div>
-          </label>
-
-          <!-- Medio -->
-          <label class="group relative flex-1 cursor-pointer">
-            <input type="radio" name="notificaciones" value="medio" class="peer hidden">
-            <div class="border-2 rounded-xl p-4 text-center transition-all duration-300 bg-white border-yellow-300 peer-checked:bg-yellow-50 peer-checked:shadow-lg peer-checked:border-yellow-500 hover:scale-[1.02] hover:shadow-md">
-              <div class="text-lg font-bebas text-yellow-600 flex justify-center items-center gap-2">
-                Medio
-              </div>
-              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-xs px-3 py-2 text-xs text-white bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
-                Inicio de mes + recordatorio un día antes del pago.
-              </div>
-            </div>
-          </label>
-
-          <!-- Intenso -->
-          <label class="group relative flex-1 cursor-pointer">
-            <input type="radio" name="notificaciones" value="intenso" class="peer hidden">
-            <div class="border-2 rounded-xl p-4 text-center transition-all duration-300 bg-white border-red-300 peer-checked:bg-red-50 peer-checked:shadow-lg peer-checked:border-red-500 hover:scale-[1.02] hover:shadow-md">
-              <div class="text-lg font-bebas text-red-600 flex justify-center items-center gap-2">
-                Intenso
-              </div>
-              <div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-max max-w-xs px-3 py-2 text-xs text-white bg-gray-800 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
-                Inicio de mes, recordatorios semanales, 3 días y 1 día antes del pago.
-              </div>
-            </div>
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- Botón para confirmar la selección -->
-      <div class="mt-6 text-center">
-        <button id="btnRegistrarFinal" class="w-full bg-fuchsia-600 text-white py-2 rounded-full hover:bg-yellow-600 transition" onclick="validarSeleccion()">
-          Registrar
-        </button>
-      </div>
+      <!-- Contenido del formulario de recordatorio -->
     </div>
   </div>
 
 <script>
+  // Manejar la visibilidad de los campos "Otro" de ambos formularios
+  function manejarTipoIngreso(selectId, inputId) {
+    const select = document.getElementById(selectId);
+    const inputOtroCredito = document.getElementById(inputId);
+
+    select.addEventListener('change', function() {
+      if (select.value === "Otro") {
+        inputOtroCredito.classList.remove('hidden');
+      } else {
+        inputOtroCredito.classList.add('hidden');
+      }
+    });
+  }
+
+  // Llamamos a la función para ambos formularios
+  manejarTipoIngreso('tipoIngreso', 'otroIngreso');
+  manejarTipoIngreso('detallep', 'OtroDetalle');
+
   function mostrarFormularioRecordatorio() {
     const formularioRecordatorio = document.getElementById('formularioRecordatorio');
     const formularioIngresos = document.getElementById('formularioIngresos');
 
-    // Ocultar el formulario de ingresos
     formularioIngresos.style.display = 'none';
-
-    // Mostrar el formulario de recordatorio
     formularioRecordatorio.style.display = 'block';
   }
-
-  function validarSeleccion() {
-    const radios = document.getElementsByName('notificaciones');
-    let seleccionado = false;
-
-    for (let i = 0; i < radios.length; i++) {
-      if (radios[i].checked) {
-        seleccionado = true;
-        break;
-      }
-    }
-
-    if (!seleccionado) {
-      alert('Por favor, selecciona un tipo de notificación.');
-    } else {
-      window.location.href = 'principal.html';
-    }
-  }
 </script>
+
 </body>
 </html>
