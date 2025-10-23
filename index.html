@@ -2,299 +2,140 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" href="img/Logo.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/output.css">
-  
-  <!-- Cargar fuentes correctamente -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-  <title>Inicio</title>
+  <title>Reportes</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="img/Logo.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <style>
-    @layer utilities {
-      .font-bebas { font-family: 'Bebas Neue', sans-serif; }
-    }
-
-    @keyframes shrinkLogo {
-      0% {
-          width: 100vw;
-          height: 100vh;
-          border-radius: 0%;
-          transform: translate(-50%, -50%) scale(1);
-      }
-      10% { 
-          width: 180vw;
-          height: 180vw; /* Asegurar proporción cuadrada */
-          border-radius: 0%;
-      }
-      25% {
-          width: 100vw;
-          height: 100vw;
-          border-radius: 50%;
-      }
-      50% {
-          width: 150px;
-          height: 150px;
-          border-radius: 100%;
-      }
-      80% {
-          width: 50px;
-          height: 50px;
-          border-radius: 100%;
-      }
-      100% {
-          width: 0;
-          height: 0;
-          opacity: -1;
-          border-radius: 100%;
-          transform: translate(-50%, -250%) scale(0);
-      }
-    }
-
-    .logo-container {
-        background-image: url('img/Logo.png'); 
-        background-size: cover; /* Cambiado a cover */
-        background-position: center;
-        background-repeat: no-repeat;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        z-index: 1000;
-    }
-
-    .animate-logo {
-        animation: shrinkLogo 4s ease-in-out forwards;
-    }
-
-    /* Estilos para el canvas de partículas */
-    #particles-js {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
-
-    /* Efectos para la imagen con volumen */
-    .logo-3d {
-      filter: drop-shadow(0 10px 8px rgba(0, 0, 0, 0.4)) 
-              drop-shadow(0 4px 3px rgba(0, 0, 0, 0.3))
-              drop-shadow(0 25px 15px rgba(0, 0, 0, 0.2));
-      transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
-      transition: all 0.3s ease;
-      border-radius: 50%;
-      position: relative;
-      z-index: 1;
-    }
-
-    .logo-3d:hover {
-      transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1.05);
-      filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.5)) 
-              drop-shadow(0 8px 5px rgba(0, 0, 0, 0.4))
-              drop-shadow(0 30px 20px rgba(0, 0, 0, 0.3));
-    }
-
-    /* Efecto de brillo adicional */
-    .logo-3d::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
-      pointer-events: none;
-      z-index: 2;
+    body {
+      font-family: 'Bebas Neue', sans-serif;
     }
   </style>
 </head>
-<body>
-    <!-- Canvas para las partículas -->
-    <div id="particles-js"></div>
-    
-    <div id="logo-container" class="logo-container bg-white"></div>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover -z-10">
+    <source src="video/videoFondo.mp4" type="video/mp4">
+  </video>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        window.onload = function() {
-            document.getElementById("logo-container").classList.add("animate-logo");
-
-            setTimeout(() => {
-                document.getElementById("logo-container").style.display = "none";
-            }, 2500);
-
-            // Inicializar partículas
-            particlesJS('particles-js', {
-              particles: {
-                number: {
-                  value: 90,
-                  density: {
-                    enable: true,
-                    value_area: 800
-                  }
-                },
-                color: {
-                  value: ["#d97706", "#c026d3"] // Ámbar 600 y Fuchsia 700
-                },
-                shape: {
-                  type: "circle",
-                  stroke: {
-                    width: 0.2,
-                    color: "#000000"
-                  }
-                },
-                opacity: {
-                  value: 0.5,
-                  random: true,
-                  anim: {
-                    enable: true,
-                    speed: 1,
-                    opacity_min: 0.1,
-                    sync: false
-                  }
-                },
-                size: {
-                  value: 10,
-                  random: true,
-                  anim: {
-                    enable: true,
-                    speed: 4,
-                    size_min: 0.8,
-                    sync: false
-                  }
-                },
-                line_linked: {
-                  enable: true,
-                  distance: 150,
-                  color: "#d97706", // Ámbar 600
-                  opacity: 1,
-                  width: 1.5
-                },
-                move: {
-                  enable: true,
-                  speed: 2,
-                  direction: "none",
-                  random: true,
-                  straight: false,
-                  out_mode: "out",
-                  bounce: false,
-                  attract: {
-                    enable: false,
-                    rotateX: 600,
-                    rotateY: 1200
-                  }
-                }
-              },
-              interactivity: {
-                detect_on: "canvas",
-                events: {
-                  onhover: {
-                    enable: true,
-                    mode: "repulse"
-                  },
-                  onclick: {
-                    enable: true,
-                    mode: "push"
-                  },
-                  resize: true
-                },
-                modes: {
-                  grab: {
-                    distance: 400,
-                    line_linked: {
-                      opacity: 1
-                    }
-                  },
-                  bubble: {
-                    distance: 400,
-                    size: 40,
-                    duration: 2,
-                    opacity: 8,
-                    speed: 3
-                  },
-                  repulse: {
-                    distance: 100,
-                    duration: 0.4
-                  },
-                  push: {
-                    particles_nb: 4
-                  },
-                  remove: {
-                    particles_nb: 2
-                  }
-                }
-              },
-              retina_detect: true
-            });
-        };
-    </script>
-
-    <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-14">
-      <div class="sm:mx-auto sm:w-full sm:max-w-sm ">
-        <!-- Imagen con efectos de sombra y volumen -->
-        <img class="mx-auto h-40 md:h-60 lg:h-80 logo-3d" src="img/LogoCirculo.png" alt="Your Company">
-        
-      </div>
-    
-      <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <h2 class="text-2xl font-bold mb-4 text-center" style="font-family: 'Bebas Neue', sans-serif;">Inicia sesión en tu cuenta</h2>
-        <form class="space-y-6" id="loginForm">
-          <div>
-            <label for="email" class="block text-sm/6 font-medium text-gray-900">Correo</label>
-            <div class="mt-2">
-              <input type="email" name="email" id="email" autocomplete="email" required class="border-2 border-yellow-600 block w-full
-               rounded-md bg-white px-3 py-1.5 text-base text-black outline-1 -outline-offset-1 
-               outline-black placeholder:text-black focus:outline-2 focus:-outline-offset-2 
-               focus:outline-fuchsia-600 sm:text-sm/6">
-            </div>
-          </div>
-    
-          <div>
-            <div class="flex items-center justify-between">
-              <label for="password" class="block text-sm/6 font-medium text-gray-900">Contraseña</label>
-              <div class="text-sm">
-                  <a href="RecuperarContraseña.html" class="font-semibold text-fuchsia-700 hover:text-yellow-600">
-                      ¿Olvidó la contraseña?
-                    </a>
-                    
-              </div>
-            </div>
-            <div class="mt-2">
-              <input type="password" name="password" id="password" autocomplete="current-password" 
-              required class="border-2 border-yellow-600 block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1
-               -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-fuchsia-600 sm:text-sm/6">
-            </div>
-          </div>
-    
-          <div>
-            <button type="submit" class="flex w-full justify-center rounded-md bg-black px-3 py-1.5 text-sm/6 
-        font-semibold text-white shadow-xs hover:bg-fuchsia-800 focus-visible:outline-2
-        focus-visible:outline-offset-2 focus-visible:outline-black">Ingresar</button>
-          </div>
-        </form>
-        <!--Simular validacion ya que no tenemos la base de datos conectada-->
-        <script>
-      document.getElementById("loginForm").addEventListener("submit", function(event) {
-        event.preventDefault(); // evita el POST
-        window.location.href = "principal.html"; // redirección manual
-      });
-    </script>
-    <!--din de la simulacion de validacion-->
-    
-        <p class="mt-10 text-center text-sm/6 text-gray-500">
-          ¿No tienes una cuenta?
-          <a href="Registro.html" class="font-semibold text-fuchsia-700 hover:text-yellow-600">Registrate</a>
-        </p>
-      </div>
+  <div class="bg-white shadow-xl rounded-3xl w-[900px] p-6 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-16 bg-black text-white flex items-center justify-center text-3xl tracking-widest"
+         style="clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%)">
+      REPORTES
     </div>
+
+    <div class="mt-20 text-center">
+      <p class="text-sm text-gray-500 mb-4">Aquí podrás generar un reporte según tu necesidad. Genéralo y observa tu gran progreso.</p>
+    </div>
+
+    <!-- Tipo de reporte -->
+<label class="block text-left mb-2 text-gray-700 text-lg">
+  Elige un rango de fechas para el presupuesto.
+</label>
+
+<div class="flex flex-col sm:flex-row sm:items-center gap-4">
+  <div class="flex flex-col w-full">
+    <label for="fechaInicio" class="text-gray-600 mb-1">Desde:</label>
+    <input
+      type="date"
+      id="fechaInicio"
+      class="p-2 border rounded w-full"
+    />
+  </div>
+
+  <div class="flex flex-col w-full">
+    <label for="fechaFin" class="text-gray-600 mb-1">Hasta:</label>
+    <input
+      type="date"
+      id="fechaFin"
+      class="p-2 border rounded w-full"
+    />
+  </div>
+</div>
+
+<!-- Mensaje de error -->
+<p id="mensajeError" class="text-red-500 text-sm mt-2 hidden"></p>
+
+<script>
+  const fechaInicio = document.getElementById("fechaInicio");
+  const fechaFin = document.getElementById("fechaFin");
+  const mensajeError = document.getElementById("mensajeError");
+
+  function validarFechas() {
+    const inicio = fechaInicio.value;
+    const fin = fechaFin.value;
+
+    mensajeError.classList.add("hidden");
+    mensajeError.textContent = "";
+
+    if (inicio && fin && new Date(fin) < new Date(inicio)) {
+      mensajeError.textContent = "La fecha final no puede ser anterior a la inicial.";
+      mensajeError.classList.remove("hidden");
+      fechaFin.value = ""; // limpia la fecha inválida
+    }
+  }
+
+  fechaInicio.addEventListener("change", validarFechas);
+  fechaFin.addEventListener("change", validarFechas);
+</script>
+
+    <select id="tipoReporteUser" class="w-full p-2 border rounded mb-4">
+      <option disabled selected>Selecciona una opción</option>
+      <option>Presupusto Proyectado</option>
+      <option>Presupuesto actual</option>
+      <option>Presupuesto actual y proyectado</option>
+    </select>
+
+    <!-- Formato de reporte -->
+    <p class="text-lg text-gray-600 mb-2">¿En qué formato deseas tu reporte? Selecciónalo.</p>
+    <div class="flex items-center gap-3 mb-4">
+      <input type="radio" name="formato" id="pdf" value="pdf" class="accent-red-600">
+      <label for="pdf" class="flex items-center gap-1 text-sm">
+        <img src="https://img.icons8.com/fluency/24/pdf.png" class="w-5 h-5"> PDF
+      </label>
+      <input type="radio" name="formato" id="excel" value="excel" class="accent-green-600 ml-4">
+      <label for="excel" class="flex items-center gap-1 text-sm">
+        <img src="https://img.icons8.com/fluency/24/ms-excel.png" class="w-5 h-5"> EXCEL
+      </label>
+    </div>
+
+    <!-- Confirmación -->
+    <p class="text-lg text-gray-700 mb-4">¿Todo listo? ok, ¡continuemos!</p>
+
+    <!-- Botones -->
+    <button id="btnPreview" disabled class="btn w-[400px] bg-fuchsia-600 text-black font-bold py-2 rounded-full transition duration-300 mb-2">
+      Preview
+    </button>
+    <button id="btnDescargar" disabled class="btn w-[400px] bg-fuchsia-600 text-black font-bold py-2 rounded-full transition duration-300">
+      Descargar reporte
+    </button>
+  </div>
+
+  <!-- Script para habilitar/deshabilitar botones -->
+  <script>
+    const select = document.getElementById('tipoReporte');
+    const formatoRadios = document.getElementsByName('formato');
+    const btnPreview = document.getElementById('btnPreview');
+    const btnDescargar = document.getElementById('btnDescargar');
+
+    function verificarCampos() {
+      const seleccionValida = select.value !== "Selecciona una opción";
+      const formatoSeleccionado = Array.from(formatoRadios).some(r => r.checked);
+
+      const habilitar = seleccionValida && formatoSeleccionado;
+
+      btnPreview.disabled = !habilitar;
+      btnDescargar.disabled = !habilitar;
+
+      btnPreview.classList.toggle('bg-amber-500', habilitar);
+      btnPreview.classList.toggle('bg-gray-400', !habilitar);
+
+      btnDescargar.classList.toggle('bg-amber-500', habilitar);
+      btnDescargar.classList.toggle('bg-gray-400', !habilitar);
+    }
+
+    select.addEventListener('change', verificarCampos);
+    formatoRadios.forEach(r => r.addEventListener('change', verificarCampos));
+  </script>
 </body>
 </html>
